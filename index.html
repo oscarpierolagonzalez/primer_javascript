@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Simple: Suma en JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+    input, button {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    #resultado {
+      color: green;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+    #resultado_promedio {
+      color: blue;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Calculadora de Suma Simple</h2>
+
+  <!-- 1. Campos donde el usuario escribe -->
+  <input type="number" id="numero1" placeholder="Primer número">
+  <span>+</span>
+  <input type="number" id="numero2" placeholder="Segundo número">
+  <span>+</span>
+  <input type="number" id="numero3" placeholder="Tercer número">
+
+  <!-- 2. Botón que dispara la función -->
+  <button onclick="realizarSuma()">Calcular Suma</button>
+
+  <!-- 3. Elemento donde imprimiremos el resultado -->
+  <div id="resultado">El resultado aparecerá aquí.</div>
+
+  <!-- 4. Código JavaScript -->
+  <script>
+    function realizarSuma() {
+      // Paso A: Leer el texto de las casillas usando su ID
+      let texto1 = document.getElementById('numero1').value;
+      let texto2 = document.getElementById('numero2').value;
+      let texto3 = document.getElementById('numero3').value;
+      // Paso B: Convertir el texto a número (obligatorio para operar)
+      let num1 = Number(texto1);
+      let num2 = Number(texto2);
+      let num3 = Number(texto3);
+
+      // Paso C: Calcular la suma
+      let total = num1 + num2 + num3;
+      // Paso D: Imprimir el resultado en la pantalla dentro de la etiqueta #resultado
+      document.getElementById('resultado').textContent = "El resultado es: " + total;
+    }
+  </script>
+  <script>
+    function calcularpromedio() {
+      let texto1 = document.getElementById('numero1').value;
+      let texto2 = document.getElementById('numero2').value;
+      let texto3 = document.getElementById('numero3').value;
+
+      let num1 = Number(texto1);
+      let num2 = Number(texto2);
+      let num3 = Number(texto3);
+
+      let promedio = (num1 + num2 + num3) / 3;
+      document.getElementById('resultado_promedio').textContent = "El promedio es: " + promedio.toFixed(2);
+    }
+  </script>
+  <button onclick="calcularpromedio()">Calcular Promedio</button>
+  <div id="resultado_promedio">El promedio aparecerá aquí.</div>
+
+</body>
+</html>
